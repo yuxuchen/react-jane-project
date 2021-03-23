@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import TodoItem from './TodoItem';
+import Test from './Test';
 import './style.css'
 
 //create component
@@ -7,6 +8,7 @@ class Todolist extends Component{
     // class must have one constractor which to be excuted first
     constructor(props){
         super(props);
+        //当组件的state活着props发生改变的时候，render函数就会重新执行
         this.state={
             inputValue:'',
             list:[]
@@ -16,6 +18,7 @@ class Todolist extends Component{
         this.handleItemDelete=this.handleItemDelete.bind(this);
     }
     render(){
+        console.log('render');
         //write bracket to return multi-line commond statement
         return(
             <Fragment>
@@ -33,6 +36,7 @@ class Todolist extends Component{
                 <ul>
                 {this.getTodoItem()}
             </ul>
+            <Test content={this.state.inputValue}/>
             </Fragment>
         )
     }
