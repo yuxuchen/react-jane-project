@@ -9,7 +9,7 @@ class Todolist extends Component{
     constructor(props) {
         super(props);
         this.state=store.getState();
-        this.handleInputChange=this.handleInputChange
+        this.handleInputChange=this.handleInputChange.bind(this);
         this.handleStoreChange=this.handleStoreChange.bind(this);
         this.handleBtnChange=this.handleBtnChange.bind(this);
         store.subscribe(this.handleStoreChange);
